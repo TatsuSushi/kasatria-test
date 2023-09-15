@@ -356,12 +356,40 @@
 
 					object.lookAt( vector );
 
+					// Base use last 40 to 31 elements
+					if ( i >= ( l - 40 ) && i <= (l - 31) ) {
+
+						const thetaBase = i * 15 + Math.PI;
+						const yBase = - ( ( l - 20 ) * 40 + ( l * 0.5 ) ) + ( 450 + ( l * 0.1 ) );
+						const radiusBase = ( ( i * 5 ) /*+ ( 200 + ( i * 2 ) )*/ );
+						object.position.setFromCylindricalCoords( radiusBase, thetaBase, yBase );
+						vector.x = - object.position.x * 1.5;
+						vector.y = object.position.y * 2;
+						vector.z = object.position.z * 5;
+						object.rotateX( 1.5708 );
+
+					}
+
+					// Base use last 30 to 21 elements
+					if ( i >= ( l - 30 ) && i <= (l - 21) ) {
+
+						const thetaBase = i * 15 + Math.PI;
+						const yBase = - ( ( l - 20 ) * 40 + ( l * 0.5 ) ) + ( 450 + ( l * 0.1 ) );
+						const radiusBase = ( ( i * 10 ) /*+ ( 200 + ( i * 2 ) )*/ );
+						object.position.setFromCylindricalCoords( radiusBase, thetaBase, yBase );
+						vector.x = - object.position.x * 1.5;
+						vector.y = object.position.y * 2;
+						vector.z = object.position.z * 5;
+						object.rotateX( 1.5708 );
+
+					}
+
 					// Base - using last 20 elements
 					if ( i >= ( l - 20 ) ) {
 
 						const thetaBase = i * 15 + Math.PI;
-						const yBase = - ( ( l - 20 ) * 50 + ( l * 0.5 ) ) + ( 450 + ( l * 0.1 ) );
-						const radiusBase = ( ( l * 10 ) + ( 100 + ( l * 5 ) ) );
+						const yBase = - ( ( l - 20 ) * 40 + ( l * 0.5 ) ) + ( 450 + ( l * 0.1 ) );
+						const radiusBase = ( ( i * 15 ) /*+ ( 200 + ( i * 2 ) )*/ );
 						object.position.setFromCylindricalCoords( radiusBase, thetaBase, yBase );
 						vector.x = - object.position.x * 1.5;
 						vector.y = object.position.y * 2;
